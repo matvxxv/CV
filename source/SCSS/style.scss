@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import "nullstyle.scss";
+
+@mixin before($path){
+	content: '';
+	background: url($path) left no-repeat;
+	width: 55px;
+	height: 50px;
+	display: block;
+	position: relative;
+	left: -65px;
+	top: 50px;
+}
+
+$fz:  50px;
+
+body{
+	font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: #FFF;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.container{
+	max-width: 1150px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+
+
+@media (max-width: 1150px){
+	.container{
+		max-width: 970px;
+	}
+}
+
+@media (max-width: 992px){
+	.container{
+		max-width: 750px;
+	}
+	.about__row{
+		flex-direction: column;
+	}
+	.skills__row{
+		flex-direction: column;
+	}
+	.personal-info__row{
+		flex-direction: column;
+	}
+	.about__list{
+		li{
+			margin: 0 0 30px 0;
+
+		}
+	}
+	.about__left{
+		margin: 0;
+	}
+}
+
+@media (max-width: 767px){
+	.container{
+		max-width: none;
+	}
+}
+
+.content {
+	flex: 1 1 auto;
+	&__top {
+		background-color: #161B25;
+	}
+}
+
+
+// Content top
+
+.personal-info {
+	&__row {
+		display: flex;
+	}
+
+	&__image {
+		padding: 120px 0 50px 0;
+		max-width: 330px;
+		width: 100%;
+		margin: 0 150px 0 0;
+		background-color: #21262f;
+	}
+
+	&__image-body {
+		img{
+			max-width: 100%;
+			min-width: 200px;
+		}
+	}
+
+	&__body {
+		padding: 110px 0 50px 0;
+		flex: 1 1 auto;
+
+	}
+
+	&__title {
+		color: #fff;
+	}
+
+	&__name {
+		font-size: $fz;
+		font-weight: 600;
+	}
+
+	&__selfposition {
+		margin: 15px 0 0 0;
+		display: inline-block;
+		font-size: $fz - 26px;
+		padding: 7px 12px;
+		background-color: #21262f;
+	}
+
+	&__contacts {
+	}
+
+}
+
+.contacts {
+
+	&__row {
+		padding: 0 70px;
+		margin: 70px 0 0 0;
+		color: #fff;
+		line-height: 26px;
+	}
+
+	&__telegram:before {
+		@include before('../img/icons/telegram.svg');
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: $fz - 32px;
+	}
+
+	&__text {
+		font-size: $fz - 34px;
+		margin: 0 0 30px 0;
+		a{
+			color: #80FFEE;
+			&:hover{
+				text-shadow: 0 0 10px #80FFEE;
+			}
+		}
+	}
+
+	&__mail:before {
+		@include before('../img/icons/vectorpaint (4).svg');
+	}
+
+	&__github:before {
+		@include before('../img/icons/github.svg');
+	}
+
+}
+
+// Content bottom
+
+
+.about {
+	&__row {
+		display: flex;
+
+	}
+	&__left {
+		height: 100%;
+		padding: 100px 0 200px 0;
+		margin: 0 150px 0 0;
+		background-color: #E8E9EA;
+		max-width: 330px;
+		min-width: 150px;
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 2rem;
+		text-align: center;
+		margin: 0 0 35px 0;
+	}
+
+	&__list {
+		font-weight: 300;
+		margin: 0 0 70px 0;
+		padding: 0 30px;
+		font-size: $fz - 32px;
+		li{
+			line-height: 20px;
+			margin: 0 0 20px 0;
+			&:last-child{
+				margin: 0;
+			}
+			&:before{
+				content: '';
+				width: 10px;
+				height: 10px;
+				background-color: #000;
+				display: block;
+				border-radius: 8px;
+				position: relative;
+				left: -15px;
+				top: 15px;
+			}
+		}
+	}
+
+	&__right {
+		padding: 100px 0;
+	}
+
+	&__projects{
+		li:before{
+			display: none;
+		}
+	}
+	&__education{
+		margin: 0 0 290px 0;
+	}
+
+}
+
+.experience {
+	&__row {
+		display: flex;
+	}
+	&__time{
+		li:before{
+			display: none;
+		}
+	}
+	&__text {
+		li:before{
+			display: none;
+		}
+	}
+}
+
+.skills {
+	&__row{
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.footer {
+	background-color: #161B25;
+	&__body {
+		text-align: center;
+		padding: 40px 0;
+		color: #80FFEE;
+		font-size: $fz - 26px;
+		line-height: 40px;
+	}
+}
